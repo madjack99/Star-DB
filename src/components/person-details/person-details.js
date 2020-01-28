@@ -53,8 +53,6 @@ export default class PersonDetails extends Component {
       return <Spinner />;
     }
 
-    console.log(person);
-
     const { id, name, gender, birthYear, eyeColor } = this.state.person;
 
     return (
