@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 import PeoplePage from '../people-page';
+import ItemList from '../item-list';
 
 import Row from '../row';
 import ItemDetails, { Record } from '../item-details';
@@ -20,6 +21,8 @@ export default class App extends Component {
       getStarship,
       getPersonImage,
       getStarshipImage,
+      getAllPeople,
+      getAllPlanets,
     } = this.swapiService;
 
     const personDetails = (
@@ -47,7 +50,15 @@ export default class App extends Component {
         <RandomPlanet />
         {/* <PeoplePage /> */}
 
-        <Row left={personDetails} right={starshipDetails} />
+        {/* <Row left={personDetails} right={starshipDetails} /> */}
+
+        <ItemList getData={getAllPeople} onItemSelected={() => {}}>
+          {({ name }) => <span>{name}</span>}
+        </ItemList>
+        <br />
+        <ItemList getData={getAllPlanets} onItemSelected={() => {}}>
+          {({ name }) => <span>{name}</span>}
+        </ItemList>
       </div>
     );
   }
