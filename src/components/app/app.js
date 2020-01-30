@@ -17,6 +17,7 @@ import Row from '../row';
 import ItemDetails, { Record } from '../item-details';
 
 import SwapiService from '../../services/swapi-service';
+import { SwapiServiceProvider } from '../swapi-service-context';
 
 import './app.css';
 
@@ -35,20 +36,21 @@ export default class App extends Component {
 
     return (
       <div>
-        <Header />
-        <RandomPlanet />
+        <SwapiServiceProvider value={this.swapiService}>
+          <Header />
+          <RandomPlanet />
 
-        <PersonDetails itemId={11} />
-        <PlanetDetails itemId={5} />
-        <StarshipDetails itemId={8} />
-        {/* <PeoplePage /> */}
+          <PersonDetails itemId={11} />
+          <PlanetDetails itemId={5} />
+          <StarshipDetails itemId={8} />
+          {/* <PeoplePage /> */}
 
-        {/* <Row left={personDetails} right={starshipDetails} /> */}
+          {/* <Row left={personDetails} right={starshipDetails} /> */}
 
-        <PersonList />
-        <StarshipList />
-        <PlanetList />
-        <br />
+          <PersonList />
+          <StarshipList />
+          <PlanetList />
+        </SwapiServiceProvider>
       </div>
     );
   }
