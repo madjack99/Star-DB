@@ -42,7 +42,7 @@ export default class App extends Component {
 
           <PersonDetails itemId={11} />
           <PlanetDetails itemId={5} />
-          <StarshipDetails itemId={8} />
+          <StarshipDetails itemId={9} />
           {/* <PeoplePage /> */}
 
           {/* <Row left={personDetails} right={starshipDetails} /> */}
