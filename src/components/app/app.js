@@ -41,7 +41,7 @@ export default class App extends Component {
             <Switch>
               <Route
                 path="/"
-                render={() => <h2>Welcome to star DB</h2>}
+                render={() => <h2 className="jumbotron">Welcome to star DB</h2>}
                 exact
               />
               <Route path="/people/:id?" component={PeoplePage} />
